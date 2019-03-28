@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'learn',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'DjangoDemo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'demo',
+        'USER': 'root',
+        'PASSWORD': 'root123',
+        'HOST': '119.29.86.18',
+        'PORT': '3306'
     }
 }
 
@@ -123,4 +129,5 @@ STATIC_ROOT = os.path.join(os.path.dirname(PROJECT_PATH), 'static')
 STATICFILES_DIRS = (
     ("css", os.path.join(STATIC_ROOT, 'css')),
     ("js", os.path.join(STATIC_ROOT, 'js')),
+    ("img", os.path.join(STATIC_ROOT, 'img')),
 )
